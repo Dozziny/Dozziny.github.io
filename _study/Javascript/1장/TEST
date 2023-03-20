@@ -1,0 +1,17 @@
+<!-- 기본적인 HTML 완성 태그 단축키 : ! 입력후 TAB키를 누른다 -->
+<!-- 주석 단축키는 Crlt + / -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <H1>안녕하세요</H1>
+    <p>Dozziny 의 연습장</P>
+<br>
+    <p>Test</p>
+</body>
+</html>
