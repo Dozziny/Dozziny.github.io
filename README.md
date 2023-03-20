@@ -7,7 +7,7 @@
     <title>Dozziny's Blog</title>
 </head>
 <body>
-    <H1>안녕하세요!!</H1>
+    <H1>안녕하세요!!!</H1>
     <p>
     <br>1. Dozziny의 Tstory Blog!! =&gt;<a href="https://dozziny.tistory.com/"target=_balnk><b>Dozziny의 블로그</b>
         <img src="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory1.daumcdn.net%2Ftistory%2F6203734%2Fattach%2Fd06cfe735b854ea8bdb57fca8fcccfbe"height="100"width="100"></a>
