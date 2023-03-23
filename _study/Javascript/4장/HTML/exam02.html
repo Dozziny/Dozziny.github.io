@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의실을 알려주세요!!</title>
+    <link rel="stylesheet" href="../CSS/swich.css">
+</head>
+<body>
+
+
+
+
+    
+<script>
+    let session = prompt ("관심 세션을 입력하세요. 1-마케팅 2-개발 3-인사 4-경영","1")
+
+    switch(session) {
+        case "1" : document.write(`<p>마케팅 세션은 <strong>201호</strong>에서 진행됩니다.</p>`);
+            break;
+        case "2" : document.write(`<p>개발 세션은 <strong>202호</strong>에서 진행됩니다.</p>)`);
+            break;
+        case "3" : document.write(`<p>인사 세션은 <strong>301호</strong>에서 진행됩니다.</p>)`);
+            break;
+        case "4" : document.write(`<p>경영 세션은 <strong>302호</strong>에서 진행됩니다.</p>)`);
+            break;
+        default : alert(`잘못 입력하셨습니다.`);
+    }
+</script>
+</body>
+</html>
