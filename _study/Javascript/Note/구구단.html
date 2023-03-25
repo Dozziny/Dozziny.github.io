@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+</head>
+<body>
+    <script> //중첩 for문
+    let start = prompt("시작단을 입력하세요","2");
+    let end = prompt("끝단을 입력하세요 (시작하는 숫자보다 커야합니다!)","9");
+        for (let i=start; i<=end; i++) {
+            document.write("<div>");
+            document.write(`<h3>${i} 단</h3>`);
+            for (let j = 1; j<=9; j++) {
+                document.write (`${i} X ${j} = ${i*j} <br>`)
+            } document.write("</div>");
+        }
+    </script>
+</body>
+</html>
