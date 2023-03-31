@@ -13,10 +13,10 @@ table{width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed;te
 
 
 /* 메인 css */
-.wrap {position: relative; background:#fff; text-align: center; overflow: hidden; height:100vh;}
+.wrap {position: relative; background:#fff; text-align: center; height:100vh;}
 
 .con-title {margin-bottom:30px;}
-.con-title h1{font-size: 34px; margin-top:200px; text-shadow: 3px 3px 0px rgba(69,44,221,0.3);}
+.con-title h1{font-size: 34px; padding-top:200px; text-shadow: 3px 3px 0px rgba(69,44,221,0.3);}
 
 
 .section2 ul {display: flex; flex-wrap: wrap;}
@@ -32,4 +32,8 @@ table{width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed;te
 }
 @media all and (max-width:700px) {
     .section2 li {width:50%;}
+}
+@media all and (max-width:500px) {
+    .con-title h1 {padding-top:50px;}
+    .section2 li {width:100%;}
 }
