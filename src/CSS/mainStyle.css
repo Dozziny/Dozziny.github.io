@@ -7,16 +7,20 @@ img {max-width:100%;}
 a:link,a:active,a:visited{text-decoration:none;color:#fff}
 table{width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed;text-align:center}
 
+img {
+    max-width: 200px;
+    max-height: 100px;
+}
 
 .container {max-width:1400px; width:100%; margin:0 auto;}
 
 
 
 /* 메인 css */
-.wrap {position: relative; background : #76a3ca; text-align: center; height:100vh;}
+.wrap {position: relative; background : #b5d6f3; text-align: center; height:100vh;}
 
 .con-title {margin-bottom:30px;}
-.con-title h1{font-size: 34px; padding-top:200px; text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.3);}
+.con-title h1{font-size: 34px; padding-top:200px; text-shadow: 3px 3px 0px rgba(184, 183, 183, 0.3);}
 
 
 .section2 ul {display: flex; flex-wrap: wrap;}
