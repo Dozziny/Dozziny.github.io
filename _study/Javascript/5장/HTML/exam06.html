@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>do while문</title>
+</head>
+<body>
+    <script>
+        let sum = 0;
+        let i = 0;
+
+        // do~while 문은 while 문의 파생된 것으로 초기값, 증감식, 조건식이 따로 떨여져 있으므로 for문에 비하여 가독성이 떨어진다
+        // do~while 문은 사용자에게 의사를 먼저 한번 물어보고 루핑을 진행할지 말지를 결정하는 프로그램을 작성할 때 주로 사용된다.
+        // do~while 문은 최소 1번 이상 실행한다는 것이 while 문과의 차이점이다
+        do {
+            sum += i;
+            document.write(`${sum}, ${i} <br/>`);
+            i++;
+        } while (i <=10)
+    </script>
+</body>
+</html>
