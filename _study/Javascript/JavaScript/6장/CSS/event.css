@@ -1,0 +1,12 @@
+#item {
+    position: relative;
+    width: 500px;
+    padding: 15px 20px;
+    margin: auto;
+}
+
+#cover {
+    border: 5px solid transparent;
+    height: 250px;
+    width: auto;
+}
