@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체</title>
+</head>
+<body>
+    <script>
+        //내장객체는 자바스크립트 라이브러리로 프로그래머가 프로그램을 만들 때 좀 더 편하게 만들라고
+        // 제공해주는 여러가지 기본 제공형 객체
+
+        //자바스크립트에서 웹 브라우저 창의 정보를 가지고 있는 Navigatior 객체가 있다.
+        console.log(`벤더 : ` + navigator.vendor);
+        console.log(`인터넷 연결 : ` + navigator.onLine);
+
+
+        // window.alert(`하이`);
+        // alert(`안녕하세요`);
+
+        // let time = new Date();
+        // console.log(`현재시간 : ` + time.toLocaleString());
+        document.write(`현재시간 = ` + new Date().toLocaleString()+ `</br></br>`);
+
+        let number = -25
+        document.write(`입력값 = ${number} </br>`)
+        document.write(`출력값 (Math.abs 사용) : ${Math.abs(number)} </br></br>`)
+
+        document.write(`Math.sqrt(10) = ${Math.sqrt(10)} </br>-> 10의 제곱근을 구하는 함수</br></br>`)
+
+        document.write(`Math.ceil(10.777) = ${Math.ceil(10.777)} </br>-> 소수점 올림 (인수의 크거나 같은 수 중에서 가장 작은 정수를 반환)</br></br>`)
+
+        document.write(`Math.floor(10.777) = ${Math.floor(10.777)} </br>-> 소숫점 버림 (인수의 크거나 같은 수 중에서 가장 작은 정수를 반환)</br></br>`)
+
+        document.write(`Math.round(10.5) = ${Math.round(10.5)} </br>-> 반올림 함수</br></br>`)
+
+        document.write(`Math.random() = ${Math.random()} </br>-> 0 ~ 1 까지 랜덤 실수 반환</br></br>`)
+
+        document.write(`Math.random() * 100 = ${Math.random() * 100 +1} </br>-> 0 ~ 100 까지 랜덤 실수 반환</br></br>`)
+
+        document.write(`Math.floor(Math.random()) * 100+1 = ${Math.floor(Math.random()*100+1)} </br>-> 1 ~ 100 까지 랜덤 정수 반환</br></br>`)
+    </script>
+</body>
+</html>
