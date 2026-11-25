@@ -33,6 +33,9 @@ nav a:hover, .site-source a:hover, .section-head a:hover, .back:hover, .full-ima
 .intro { min-height: clamp(17rem, 26vw, 22rem); position: relative; isolation: isolate; display: flex; align-items: end; border-radius: var(--radius); overflow: hidden; color: #fff; background: #15201d; }
 .intro img, .intro::after { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; }
 .intro img { object-fit: cover; object-position: 54% 53%; }
+.today-visitors { position: absolute; inset: .85rem .95rem auto auto; display: inline-flex; align-items: baseline; gap: .45em; padding: .22rem .55rem; border-radius: .4rem; background: rgba(14,27,22,.84); color: #f4f6ed; font: 600 .72rem/1.45 ui-monospace, monospace; letter-spacing: .035em; }
+.today-visitors[hidden] { display: none; }
+.today-visitors strong { color: var(--lime); font-variant-numeric: tabular-nums; }
 .intro::after { content: ""; z-index: -1; background: linear-gradient(94deg, rgba(11,24,21,.96) 0%, rgba(11,24,21,.89) 27%, rgba(11,24,21,.26) 68%, rgba(11,24,21,.04)); }
 .intro-copy { padding: clamp(1.5rem, 4.2vw, 3.75rem); }
 .intro h1 { font-size: clamp(2.7rem, 5vw, 4.3rem); line-height: 1.05; letter-spacing: -.07em; }
