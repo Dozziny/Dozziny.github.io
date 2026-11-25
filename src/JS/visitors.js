@@ -15,15 +15,32 @@ function startCounter() {
     const dayKey = () => new Date(Date.now() + seoulOffset).toISOString().slice(0, 10);
     let entryDay = dayKey();
     let displayedDay;
+    let confirmedCount = null;
+    const snapshotKey = 'dozziny-today-count';
     let midnightTimer;
     let revision = 0;
 
-    function render(value) {
+    function savedCount(day) {
+        try {
+            const saved = JSON.parse(localStorage.getItem(snapshotKey));
+            if (saved?.day === day && Number.isSafeInteger(saved.count) && saved.count >= 0) {
+                return saved.count;
+            }
+        } catch { /* Storage can be disabled in a private window. */ }
+        return null;
+    }
+
+    function render(value, lastKnown = false) {
         if (!badge) return;
         badge.hidden = false;
         number.textContent = value === null ? '—' : value.toLocaleString('ko-KR');
-        badge.title = value === null ? '오늘 방문 수 확인 중 · 한국 시간 기준' : '오늘 방문한 브라우저 수 · 한국 시간 기준';
-        badge.setAttribute('aria-label', value === null ? '오늘 방문 수 확인 중' : '오늘 방문한 브라우저 ' + value + '개');
+        let description = lastKnown ? '오늘 방문 수를 불러오지 못했어요' : '오늘 방문 수 확인 중';
+        if (value !== null) {
+            const label = lastKnown ? '마지막으로 확인한 오늘 방문 수' : '오늘 방문 수';
+            description = label + ' ' + number.textContent + ' · 한국 시간 기준';
+        }
+        badge.title = description;
+        badge.setAttribute('aria-label', description);
     }
 
     async function update(allowVisit) {
@@ -31,12 +48,13 @@ function startCounter() {
         const current = ++revision;
         if (displayedDay !== day) {
             displayedDay = day;
-            render(null);
+            confirmedCount = savedCount(day);
+            render(confirmedCount, confirmedCount !== null);
         }
         async function fetchValue(action) {
             const response = await fetch('https://abacus.jasoncameron.dev/' + action + '/dozziny.github.io/' + day, {
                 cache: 'no-store', credentials: 'omit', referrerPolicy: 'no-referrer', keepalive: true,
-                signal: AbortSignal.timeout(10000)
+                signal: AbortSignal.timeout(action === 'get' ? 20000 : 10000)
             });
             const result = await response.json();
             const missingKey = action === 'get' && response.status === 404 && result.error === 'Key not found';
@@ -53,17 +71,26 @@ function startCounter() {
             if (allowVisit && navigator.onLine && day === dayKey() && await reserveDay(day)) {
                 count = await fetchValue('hit');
             }
-            if (current === revision && day === dayKey()) render(count);
+            if (day !== dayKey() || day !== displayedDay) return;
+            const saved = savedCount(day);
+            // The daily total only increases. A late response must not undo a confirmed visit.
+            confirmedCount = Math.max(count, confirmedCount ?? 0, saved ?? 0);
+            if (confirmedCount !== saved) {
+                try {
+                    localStorage.setItem(snapshotKey, JSON.stringify({ day, count: confirmedCount }));
+                } catch { /* The confirmed value is still available for this page. */ }
+            }
+            render(confirmedCount, count < confirmedCount);
         }
         try {
             // Let a second tab read after the first tab finishes its increment.
             if (navigator.locks) await navigator.locks.request('dozziny-today', requestCount);
             else await requestCount();
         } catch {
-            if (badge && current === revision && day === dayKey()) {
-                render(null);
-                badge.title = '오늘 방문 수를 불러오지 못했어요';
-                badge.setAttribute('aria-label', badge.title);
+            if (current === revision && day === dayKey()) {
+                const saved = savedCount(day);
+                if (saved !== null) confirmedCount = Math.max(confirmedCount ?? 0, saved);
+                render(confirmedCount, true);
             }
         }
     }
