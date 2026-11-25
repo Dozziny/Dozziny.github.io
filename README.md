@@ -4,4 +4,9 @@
 
 [블로그 열기](https://dozziny.github.io/) · [바이브코딩](https://dozziny.github.io/#projects) · [2023년 개발 기록](https://dozziny.github.io/#articles)
 
+두 앱의 소개 페이지에서 테스트 자료로 구성한 스크린샷과 주요 기능을 볼 수 있습니다.
+
+- [로컬 데이터센터 앱](https://dozziny.github.io/projects/local-data-center.html)
+- [맥용 윈도우 작업표시줄](https://dozziny.github.io/projects/mac-taskbar.html)
+
 ![블로그 표지로 사용한 다리 야경](img/bridge-cover.webp)
