@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f6f4ed">
-    <meta name="description" content="도찌니의 개발 기록. AWS 인프라, Kubernetes, 배포 자동화에 관한 글을 모았어요.">
-    <title>Dozziny's Blog</title>
+    <meta name="description" content="도찌니의 개인 기술 노트. 직접 써 본 도구, 만들어 본 것들, 문제를 풀며 배운 점을 기록하는 공간입니다.">
+    <title>도찌니의 기술 노트 · Dozziny’s Blog</title>
     <link rel="stylesheet" href="src/CSS/mainStyle.css">
 </head>
 <body>
@@ -14,36 +14,37 @@
         <header class="masthead">
             <h1 lang="en">Dozziny’s <em>Blog</em><span class="period">.</span></h1>
             <nav aria-label="블로그 메뉴">
-                <a href="#articles">글 목록</a>
+                <a href="#articles">지난 글</a>
                 <a href="https://github.com/Dozziny/Dozziny.github.io">GitHub <span aria-hidden="true">↗</span></a>
             </nav>
         </header>
 
         <main id="main">
-            <article class="feature" aria-labelledby="feature-title">
+            <section class="feature" aria-labelledby="feature-title">
                 <div class="cover">
                     <img src="img/bridge-cover.webp" width="1680" height="817"
                          alt="밤하늘 아래 불을 밝힌 다리가 멀리 이어지는 풍경" fetchpriority="high">
                 </div>
                 <div class="feature-body">
-                    <div class="byline">
-                        <span class="pick">추천 글</span>
-                        <time datetime="2023-06-27">2023.06.27</time>
-                    </div>
-                    <h2 id="feature-title">AWS를 이용한<br>자산관리시스템</h2>
-                    <p>GitHub Actions와 Terraform으로 AWS 인프라 배포를 자동화하고, 취약점 점검과 모니터링까지 연결한 기록.</p>
-                    <a class="read" href="https://dozziny.tistory.com/30" aria-label="AWS를 이용한 자산관리시스템 글 읽기">
-                        글 읽기 <span aria-hidden="true">↗</span>
+                    <h2 id="feature-title">도찌니의<br>기술 노트</h2>
+                    <p>어떤 도구가 손에 잘 맞았는지, 안 되던 건 어떻게 고쳤는지. 다음에 다시 꺼내 볼 이야기를 여기에 적어 둡니다.</p>
+                    <a class="read" href="#articles">
+                        지난 기록 읽기 <span aria-hidden="true">↓</span>
                     </a>
                 </div>
-            </article>
+            </section>
 
             <section class="archive" id="articles" aria-labelledby="archive-title">
                 <header class="archive-head">
-                    <h2 id="archive-title">다른 글</h2>
+                    <h2 id="archive-title">2023년 개발 기록</h2>
                     <a href="https://dozziny.tistory.com/">티스토리에서 전체 보기 <span aria-hidden="true">↗</span></a>
                 </header>
                 <ul class="articles">
+                    <li><a href="https://dozziny.tistory.com/30">
+                        <time datetime="2023-06-27">2023.06.27</time>
+                        <span class="article-title">AWS를 이용한 자산관리시스템 (with terraform)</span>
+                        <span class="arrow" aria-hidden="true">↗</span>
+                    </a></li>
                     <li><a href="https://dozziny.tistory.com/29">
                         <time datetime="2023-05-31">2023.05.31</time>
                         <span class="article-title">AWS Lambda Metric / k8s pending</span>
